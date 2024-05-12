@@ -6,14 +6,14 @@ exports.connectMonggose =()=>{
   {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-  })
-  .then((e)=>console.log("Connected to Mongodb =>> CSV Upload"))
-  .catch((e)=>console.log("Not Connect Mongodb"))
+  });
+  // .then((e)=>console.log("Connected to Mongodb =>> CSV Upload"))
+  // .catch((e)=>console.log("Not Connect Mongodb"))
 }
 
 
-// const db = mongoose.connection;
-// db.on('error', console.error.bind('error in connecting to the db'));
-// db.once('open', function(){
-//   console.log('Successfully connected to the DB');
-// })
+const db = mongoose.connection;
+db.on('error', console.error.bind('error in connecting to the db'));
+db.once('open', function(){
+  console.log('Successfully connected to the DB');
+})
